@@ -1,6 +1,6 @@
 FROM centos:6.8
 
-RUN yum update && yum install -y java
+RUN yum update && yum install -y java-1.7.0-openjdk-devel
 RUN mkdir /sso/pingfederate
 RUN chmod a+x /sso/pingfederate
 
