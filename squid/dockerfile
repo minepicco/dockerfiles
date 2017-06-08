@@ -1,6 +1,7 @@
 from centos:7
 
 RUN yum -y update && yum -y install squid
+RUN yum -y install wget
 RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/squid/squid.conf
 # COPY squid.conf /etc/squid/squid.conf
 RUN chmod +x squid.conf
