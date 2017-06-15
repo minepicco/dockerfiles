@@ -1,5 +1,5 @@
 from ubuntu
 
-RUN sudo apt-get update -y && sudo apt-get -y install ubuntu-desktop vncserver
+RUN sudo apt-get update -y && sudo apt-get -y install ubuntu-desktop vnc4server
 
 EXPOSE 5901
