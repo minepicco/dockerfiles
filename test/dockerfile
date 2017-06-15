@@ -1,0 +1,5 @@
+from ubuntu
+
+RUN sudo apt-get update -y && sudo apt-get -y install ubuntu-desktop vncserver
+
+EXPOSE 5901
