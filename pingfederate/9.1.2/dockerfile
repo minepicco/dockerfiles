@@ -9,6 +9,6 @@ RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfede
 RUN chmod +x pf-install-9.1.2.sh
 RUN ./pf-install-9.1.2.sh
 #ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
-ENTRYPOINT ["sh", "-c", "systemctl start pingfederate", "BACKGROUND"]
+ENTRYPOINT ["sh", "-c", "systemctl start pingfederate-1", "BACKGROUND"]
 
 EXPOSE 9999 9031 1099
