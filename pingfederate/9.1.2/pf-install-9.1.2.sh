@@ -476,17 +476,17 @@ fi
 function download_pf()
 {
 if [ ! -f "${TMP_DIR}pingfederate-${PFVERSION}.tar.gz" ]; then
-  read -e -p "Could not locate pingfederate-${PFVERSION}.tar.gz, would you like to download it? (y/n) " -i "y" download
-  if [[ $download =~ ^[Yy]$ ]]; then
+#  read -e -p "Could not locate pingfederate-${PFVERSION}.tar.gz, would you like to download it? (y/n) " -i "y" download
+#  if [[ $download =~ ^[Yy]$ ]]; then
     echo "# Downloading pingfederate-$PFVERSION.tar.gz"
     curl -f -o "${TMP_DIR}pingfederate-$PFVERSION.tar.gz" ${BASE_DL_URL}${PFVERSION}/pingfederate-${PFVERSION}.tar.gz || echo Download failed exiting, please retry or manually download pingfederate-${PFVERSION}.tar.gz and place it in the same directory as the pf-install.sh
     if [ ! -f ${TMP_DIR}pingfederate-$PFVERSION.tar.gz ]; then
     exit 1
     fi
-  else
-    echo "The installation can't be completed without downloading PingFederate. Please manually download pingfederate-${PFVERSION}.tar.gz and place it in the same directory as pf-install.sh"
-    exit 1
-  fi
+#  else
+#    echo "The installation can't be completed without downloading PingFederate. Please manually download pingfederate-${PFVERSION}.tar.gz and place it in the same directory as pf-install.sh"
+#    exit 1
+#  fi
 fi
 }
 
