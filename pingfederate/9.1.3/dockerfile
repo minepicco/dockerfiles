@@ -1,9 +1,10 @@
 FROM ubuntu:16.04 
 
-RUN sudo apt-get update -y && sudo apt-get install wget -y && sudo apt-get install openjdk-9-jre -y
+RUN sudo apt-get update -y && sudo apt-get install wget -y
+RUN sudo apt-get install openjdk-9-jre -y
 RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfederate/8.3.3/pf-install.sh
 RUN chmod +x pf-install.sh
-CMD ["./pf-install.sh -v 9.1.3"]
+RUN "./pf-install.sh -v 9.1.3"
 ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
 
 EXPOSE 9999 9031 1099
