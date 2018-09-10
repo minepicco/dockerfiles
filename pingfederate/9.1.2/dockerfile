@@ -8,6 +8,7 @@ RUN yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfederate/9.1.2/pf-install-9.1.2.sh
 RUN chmod +x pf-install-9.1.2.sh
 RUN ./pf-install-9.1.2.sh
-ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
+#ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
+ENTRYPOINT ["sh", "-c", "systemctl start pingfederate", "BACKGROUND"]
 
 EXPOSE 9999 9031 1099
