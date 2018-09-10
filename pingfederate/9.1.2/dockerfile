@@ -1,0 +1,12 @@
+FROM centos:7 
+
+RUN yum update -y && yum install wget -y
+RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.rpm
+RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jre-9.0.4_linux-x64_bin.rpm
+RUN yum install jdk-9.0.4_linux-x64_bin.rpm && yum install jre-9.0.4_linux-x64_bin.rpm
+RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfederate/9.1.2/pf-install.sh
+RUN chmod +x pf-install.sh
+RUN ./pf-install-9.1.2.sh
+ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
+
+EXPOSE 9999 9031 1099
