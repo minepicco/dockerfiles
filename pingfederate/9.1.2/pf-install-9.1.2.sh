@@ -19,7 +19,7 @@ path_to_executable=$(which $1 2> /dev/null)
  if [[ ! -x "$path_to_executable" ]]; then
    if [ -f /etc/redhat-release ] ; then
     echo Installing $1
-    yum -y install $1 
+    yum -q install $1 
    fi
    if [ -f /etc/debian_version ] ; then
     echo Installing $1
