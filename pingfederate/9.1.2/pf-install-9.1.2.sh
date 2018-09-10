@@ -3,7 +3,8 @@ PFVERSION=9.1.2
 PF_SIZE_REQ=1024 
 PF_TMP_SIZE_REQ=200
 TMP_DIR=/tmp/ping-tmp/
-JAVA_HOME=/usr/java/jre-10.0.2/
+#JAVA_HOME=/usr/java/jre-10.0.2/
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64
 # PF Download Base URL
 BASE_DL_URL="https://s3.amazonaws.com/pingone/public_downloads/pingfederate/"
 CHOSEN_PORTS=()
