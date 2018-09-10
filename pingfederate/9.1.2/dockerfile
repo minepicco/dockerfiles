@@ -3,8 +3,8 @@ FROM centos:7
 RUN yum update -y && yum install wget -y
 RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/10.0.2+13/19aef61b38124481863b1413dce1855f/jre-10.0.2_linux-x64_bin.rpm
 RUN rpm -ivh jre-10.0.2_linux-x64_bin.rpm
-RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfederate/9.1.2/pf-install.sh
-RUN chmod +x pf-install.sh
+RUN wget https://raw.githubusercontent.com/minepicco/dockerfiles/master/pingfederate/9.1.2/pf-install-9.1.2.sh
+RUN chmod +x pf-install-9.1.2.sh
 RUN ./pf-install-9.1.2.sh
 ENTRYPOINT ["sh", "-c", "/home/pingfederate/bin/run.sh", "BACKGROUND"]
 
