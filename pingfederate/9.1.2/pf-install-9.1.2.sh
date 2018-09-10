@@ -766,7 +766,8 @@ service_tool "/usr/local/pingfederate-${COUNTER}/tools" install \
                                                     -start "yes" \
                                                     -log pf-service-install.log \
                                                     -backup pf-service-backup \
-|| die "The service installation was not successful. See 'pf-service-install.log' for details."
+#|| die "The service installation was not successful. See 'pf-service-install.log' for details."
+|| echo "The service installation was not successful. See 'pf-service-install.log' for details."
 
 if [[ $pfmode = CLUSTERED_CONSOLE || $pfmode = STANDALONE ]]; then
   echo " "
