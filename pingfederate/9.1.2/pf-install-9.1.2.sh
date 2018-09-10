@@ -27,10 +27,10 @@ path_to_executable=$(which $1 2> /dev/null)
    fi
  fi
 path_to_executable=$(which $1 2> /dev/null)
- if [[ ! -x "$path_to_executable" ]]; then
-    echo Unable to install $1, please install $1
-    # exit 1
- fi
+ #if [[ ! -x "$path_to_executable" ]]; then
+ #   echo Unable to install $1, please install $1
+ #   exit 1
+ #fi
 }
 
 #######################################
