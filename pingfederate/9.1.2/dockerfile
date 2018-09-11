@@ -10,9 +10,9 @@ RUN yum update -y && yum install wget -y &&\
     chmod +x pf-install-9.1.2.sh &&\
    ./pf-install-9.1.2.sh
 RUN chown root. -R /usr/local/pingfederate1-9.1.2/
-RUN chmod +x -R /usr/local/pingfederate1-9.1.2/
+RUN chmod 755 -R /usr/local/pingfederate1-9.1.2/
 RUN chown root. -R /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
-RUN chmod +x -R /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
+RUN chmod 755 -R /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
 ENTRYPOINT ["sh", "-c", "/usr/local/pingfederate1-9.1.2/pingfederate/sbin/pingfederate-run.sh", "BACKGROUND"]
 
 EXPOSE 9999 9031 1099
