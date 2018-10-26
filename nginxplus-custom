@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
-RUN apt-get update && apt-get upgrade -y && apt-get install wget -y
+RUN apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install -y gnupg
+RUN 
 RUN mkdir /etc/ssl/nginx && cd /etc/ssl/nginx
 COPY nginx-repo.crt /etc/ssl/nginx/
 COPY nginx-repo.key /etc/ssl/nginx/
