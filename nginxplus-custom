@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
-RUN apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install -y gnupg
-RUN 
+RUN apt-get update && apt-get install wget -y && apt-get install -y gnupg
 RUN mkdir /etc/ssl/nginx && cd /etc/ssl/nginx
 COPY nginx-repo.crt /etc/ssl/nginx/
 COPY nginx-repo.key /etc/ssl/nginx/
@@ -17,3 +16,4 @@ RUN apt-get install -y nginx-plus
 EXPOSE 80
 STOPSIGNAL SIGTERM
 CMD ["nginx", "-g", "daemon off;"]
+
